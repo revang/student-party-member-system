@@ -1,0 +1,6 @@
+<view>
+  <van-button size="large" type="primary" bindtap="getData">转换</van-button>
+  <view class="container">
+    <ec-canvas id="mychart" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>
