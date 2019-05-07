@@ -1,0 +1,17 @@
+<vblock title="学院信息">
+  <van-cell-group>
+    <van-field value="{{name}}" label="名称" placeholder="请填写学院名称" bind:change="onChangeName" />
+  </van-cell-group>
+</vblock>
+
+<div class="btnContainer1">
+  <block wx:if="{{id==null}}">
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickAdd">添加</van-button>
+  </block>
+  <block wx:else>
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickUpdate">修改</van-button>
+    <van-button class="btnStyle1" type="danger" size="large" bindtap="onClickDelete">删除</van-button>
+  </block>
+</div>
+
+<van-toast id="van-toast" />

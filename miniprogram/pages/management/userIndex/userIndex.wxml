@@ -1,0 +1,9 @@
+<van-search placeholder="查询用户（姓名）" bind:search="onSearchBranchDepartment" />
+
+<van-cell-group wx:for="{{managementList}}" wx:key="_id">
+  <van-cell title="{{item.nickname}}" value="修改 / 删除" label="{{item.academyName?item.academyName:'浙江树人大学'}}，{{item.branchDepartmentName?item.branchDepartmentName:'系统管理员'}}" bindtap="onClickItem" data-id="{{item._id}}" />
+</van-cell-group>
+
+<div class="btnContainer2">
+  <van-button round type="primary" bind:click="onClickAdd">添加</van-button>
+</div>

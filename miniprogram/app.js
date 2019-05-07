@@ -10,6 +10,9 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      // development
+      userId: "96c1cbbe5cd027fb0d24d4a2261656c2"
+    }
   }
 })

@@ -1,0 +1,28 @@
+<vblock title="学院信息">
+  <van-cell-group>
+    <van-cell title="学院" value="{{academyType==null?'未设置':academyType}}" bind:click="onClickShowAcademyType" />
+    <van-popup show="{{ academyTypeShow }}" position="bottom" custom-class="bottom">
+      <vblock title="请选择学院">
+        <van-picker show-toolbar title="{{academyType==null?'请选择':academyType}}" columns="{{ academyTypeList }}" bind:change="onChangeAcademyType" bind:confirm="onConfirmAcademyType" bind:cancel="onCancelAcademyType" />
+      </vblock>
+    </van-popup>
+  </van-cell-group>
+</vblock>
+
+<vblock title="{{typeName}}信息">
+  <van-cell-group>
+    <van-field value="{{name}}" label="名称" placeholder="请填写{{typeName}}名称" bind:change="onChangeName" />
+  </van-cell-group>
+</vblock>
+
+<div class="btnContainer1">
+  <block wx:if="{{id==null}}">
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickAdd">添加</van-button>
+  </block>
+  <block wx:else>
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickUpdate">修改</van-button>
+    <van-button class="btnStyle1" type="danger" size="large" bindtap="onClickDelete">删除</van-button>
+  </block>
+</div>
+
+<van-toast id="van-toast" />

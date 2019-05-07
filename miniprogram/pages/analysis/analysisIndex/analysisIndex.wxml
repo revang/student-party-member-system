@@ -1,0 +1,7 @@
+<vblock title="信息统计">
+  <van-cell-group>
+    <van-cell title="用户统计" value="查看" is-link url="../userTypeAnalysis/userTypeAnalysis" />
+    <van-cell title="学生政治面貌统计" value="查看" is-link url="../studentPartyMemberTypeAnalysis/studentPartyMemberTypeAnalysis" />
+    <van-cell title="支部统计" value="查看" is-link url="../branchDepartmentTypeAnalysis/branchDepartmentTypeAnalysis" />
+  </van-cell-group>
+</vblock>

@@ -1,0 +1,85 @@
+<vblock title="账号信息">
+  <van-cell-group>
+    <van-field value="{{nickname}}" label="姓名" placeholder="请填写姓名" bind:change="changeValue" data-key="nickname" />
+    <van-field value="{{username}}" label="账号" placeholder="请填写账号" bind:change="changeValue" data-key="username" />
+    <van-field value="{{password}}" label="密码" placeholder="请填写密码" type="password" bind:change="changeValue" data-key="password" />
+  </van-cell-group>
+</vblock>
+
+<vblock title="用户类型">
+  <van-cell-group>
+    <van-cell title="类型" value="{{userType==null?'未设置':userType}}" bind:click="onClickShowUserType" />
+    <van-popup show="{{ userTypeShow }}" position="bottom" custom-class="bottom">
+      <vblock title="请选择用户类型">
+        <van-picker show-toolbar title="{{userType==null?'请选择':userType}}" columns="{{ userTypeList }}" bind:change="onChangeUserType" bind:confirm="onConfirmUserType" bind:cancel="onCancelUserType" />
+      </vblock>
+    </van-popup>
+  </van-cell-group>
+</vblock>
+
+<!-- 如果用户类型为：支部管理员、联系人、学生，加载其他设置 -->
+<block wx:if="{{userType&&userType!='系统管理员'}}">
+  <vblock title="其他设置">
+    <!-- 学院、支部、联系人、班级、政治面貌
+    支部管理员：学院、支部
+    联系人：学院、支部
+    学生：学院、支部、联系人、班级、政治面貌-->
+
+    <van-cell title="学院" value="{{academyType==null?'未设置':academyType}}" bind:click="onClickShowAcademyType" />
+    <van-popup show="{{ academyTypeShow }}" position="bottom" custom-class="bottom">
+      <vblock title="请选择学院">
+        <van-picker show-toolbar title="{{academyType==null?'请选择':academyType}}" columns="{{ academyTypeList }}" bind:change="onChangeAcademyType" bind:confirm="onConfirmAcademyType" bind:cancel="onCancelAcademyType" />
+      </vblock>
+    </van-popup>
+
+
+    <van-cell title="支部" value="{{branchDepartmentType==null?'未选择':branchDepartmentType}}" bind:click="onClickShowBranchDepartmentType" />
+    <van-popup show="{{ branchDepartmentTypeShow }}" position="bottom" custom-class="bottom">
+      <vblock title="请选择支部">
+        <van-picker show-toolbar title="{{branchDepartmentType==null?'请选择':branchDepartmentType}}" columns="{{ branchDepartmentTypeList }}" bind:change="onChangeBranchDepartmentType" bind:confirm="onConfirmBranchDepartmentType" bind:cancel="onCancelBranchDepartmentType"
+        />
+      </vblock>
+    </van-popup>
+
+    <div wx:if="{{userType=='支部管理员'||userType=='联系人'}}"></div>
+
+    <div wx:elif="{{userType=='学生'}}">
+
+      <van-cell title="班级" value="{{classType==null?'未选择':classType}}" bind:click="onClickShowClassType" />
+      <van-popup show="{{ classTypeShow }}" position="bottom" custom-class="bottom">
+        <vblock title="请选择班级">
+          <van-picker show-toolbar title="{{classType==null?'请选择':classType}}" columns="{{ classTypeList }}" bind:change="onChangeClassType" bind:confirm="onConfirmClassType" bind:cancel="onCancelClassType" />
+        </vblock>
+      </van-popup>
+
+      <van-cell title="联系人" value="{{contartPersonType==null?'未选择':contartPersonType}}" bind:click="onClickShowContartPersonType" />
+      <van-popup show="{{ contartPersonTypeShow }}" position="bottom" custom-class="bottom">
+        <vblock title="请选择班级">
+          <van-picker show-toolbar title="{{contartPersonType==null?'请选择':contartPersonType}}" columns="{{ contartPersonTypeList }}" bind:change="onChangeContartPersonType" bind:confirm="onConfirmContartPersonType" bind:cancel="onCancelContartPersonType" />
+        </vblock>
+      </van-popup>
+
+      <van-cell title="政治面貌" value="{{partyMemberType==null?'未设置':partyMemberType}}" bind:click="onClickShowPartyMemberType" />
+      <van-popup show="{{ partyMemberTypeShow }}" position="bottom" custom-class="bottom">
+        <vblock title="请选择政治面貌">
+          <van-picker show-toolbar title="{{partyMemberType==null?'请选择':partyMemberType}}" columns="{{ partyMemberTypeList }}" bind:change="onChangePartyMemberType" bind:confirm="onConfirmPartyMemberType" bind:cancel="onCancelPartyMemberType" />
+        </vblock>
+      </van-popup>
+
+    </div>
+
+    <div wx:else></div>
+  </vblock>
+</block>
+
+<div class="btnContainer1">
+  <block wx:if="{{id==null}}">
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickAdd">添加</van-button>
+  </block>
+  <block wx:else>
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickUpdate">修改</van-button>
+    <van-button class="btnStyle1" type="danger" size="large" bindtap="onClickDelete">删除</van-button>
+  </block>
+</div>
+
+<van-toast id="van-toast" />

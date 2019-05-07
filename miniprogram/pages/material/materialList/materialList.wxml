@@ -1,0 +1,5 @@
+<van-search placeholder="查询{{typeName}}（标题）" bind:search="onSearchMaterial" />
+
+<van-cell-group wx:for="{{materialList}}" wx:key="_id">
+  <van-cell title="{{item.title}}" value="{{item.reviewState?(item.reviewState==true?'审核通过':'审核拒绝'):'审核'}}" label="{{item.academyName+' '+item.className+' '+item.nickname}}" bindtap="onClickItem" data-id="{{item._id}}" />
+</van-cell-group>

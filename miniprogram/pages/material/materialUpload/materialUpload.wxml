@@ -1,0 +1,59 @@
+<vblock title="基本信息">
+  <van-cell-group>
+    <van-field label="标题" value="{{title}}" placeholder="请输入标题" bind:change="onClickTitle" />
+  </van-cell-group>
+</vblock>
+
+<block wx:if="{{type=='document'}}">
+  <vblock title="文档信息">
+    <van-cell-group>
+
+      <van-cell title="文档类型" value="{{documentType==null?'未选择':documentType}}" bind:click="onClickShowDocumentType" />
+      <van-popup show="{{ documentshow }}" position="bottom" custom-class="bottom">
+        <demo-block title="请选择上传文档类型">
+          <van-picker show-toolbar title="{{documentType==null?'请选择':documentType}}" columns="{{ documentTypeList }}" bind:change="onChangeDocument" bind:confirm="onConfirmDocument" bind:cancel="onCancelDocument" />
+        </demo-block>
+      </van-popup>
+
+      <van-cell title="文档位置" value="{{documentRes?'已选择':'请选择文档'}}" bind:click="onClickChooseDocument" />
+
+      <van-cell title="日期" value="{{date==null?'未选择':date}}" bind:click="onClickShowDate" />
+      <van-popup show="{{ timeshow }}" position="bottom" custom-class="bottom">
+        <vblock title="选择日期（年月日）">
+          <van-datetime-picker type="date" data-type="date" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onConfirmDate" bind:cancel="onCancelDate" />
+        </vblock>
+      </van-popup>
+
+    </van-cell-group>
+  </vblock>
+</block>
+
+<block wx:if="{{type=='activity'}}">
+  <vblock title="志愿服务信息">
+    <van-cell-group>
+
+      <van-cell title="文档类型" value="{{documentType==null?'未选择':documentType}}" bind:click="onClickShowDocumentType" />
+      <van-popup show="{{ documentshow }}" position="bottom" custom-class="bottom">
+        <demo-block title="请选择上传文档类型">
+          <van-picker show-toolbar title="{{documentType==null?'请选择':documentType}}" columns="{{ documentTypeList }}" bind:change="onChangeDocument" bind:confirm="onConfirmDocument" bind:cancel="onCancelDocument" />
+        </demo-block>
+      </van-popup>
+
+      <van-cell title="文档位置" value="{{documentRes?'已选择':'请选择文档'}}" bind:click="onClickChooseDocument" />
+
+      <van-cell title="日期" value="{{date==null?'未选择':date}}" bind:click="onClickShowDate" />
+      <van-popup show="{{ timeshow }}" position="bottom" custom-class="bottom">
+        <vblock title="选择日期（年月日）">
+          <van-datetime-picker type="date" data-type="date" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onConfirmDate" bind:cancel="onCancelDate" />
+        </vblock>
+      </van-popup>
+
+    </van-cell-group>
+  </vblock>
+</block>
+
+<div class="btnContainer1">
+  <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickSubmit">提交</van-button>
+</div>
+
+<van-toast id="van-toast" />

@@ -1,0 +1,36 @@
+<vblock title="用户信息">
+  <van-cell-group>
+    <van-cell title="姓名" value="{{nickname}}" />
+    <van-cell title="学院" value="{{academyName}}" />
+    <van-cell title="支部" value="{{branchDepartmentName}}" />
+    <van-cell title="班级" value="{{className}}" />
+    <van-cell title="政治面貌" value="{{partyMemberType}}" />
+  </van-cell-group>
+</vblock>
+
+<vblock title="文档信息">
+  <van-cell-group>
+    <van-cell title="标题" value="{{title}}" />
+    <van-cell title="文档类型" value="{{documentType}}" />
+    <van-cell title="文档" value="查看" is-link bind:click="onClickView" />
+    <van-cell title="日期" value="{{date}}" />
+  </van-cell-group>
+</vblock>
+
+<vblock title="审核意见（请填写）">
+  <van-cell title="审核" value="{{reviewState==null?'请选择':(reviewState==true?'通过':'拒绝')}}" bind:click="onClickShowReviewState" />
+  <van-cell-group>
+    <van-field label="审核意见" value="{{reviewComment}}" placeholder="请填写审核意见" bind:change="onChangeReviewComment" />
+  </van-cell-group>
+</vblock>
+
+<div class="btnContainer1" wx:if="{{operateState}}">
+  <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickSubmit">提交</van-button>
+</div>
+
+<van-popup show="{{ reviewStateShow }}" position="bottom" custom-class="bottom">
+  <vblock title="请选择通过/拒绝">
+    <van-picker show-toolbar columns="{{ reviewStateList }}" bind:change="onChangeReviewState" bind:confirm="onConfirmReviewState" bind:cancel="onCancelReviewState" />
+  </vblock>
+</van-popup>
+<van-toast id="van-toast" />

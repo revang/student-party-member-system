@@ -1,0 +1,7 @@
+<van-cell-group wx:for="{{userTypeList}}" wx:key="title">
+  <van-cell title="{{item.name}}" value="{{item.value}}" />
+</van-cell-group>
+
+<view class="container">
+  <ec-canvas id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+</view>
