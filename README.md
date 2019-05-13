@@ -22,6 +22,9 @@ storagePartyMemberSystemMaterial
 - material
   - materialReview && materialUpload && materialIndex
 
+- video 
+  - videoIndex && videoUpload && videoPlay
+
 ## DATABASE DESIGN
 
   - colPartyMemberSystemManagement

@@ -35,6 +35,12 @@ Page({
   },
 
   onLoad: function(options) {
+    // // get userType
+    this.setData({
+      userType: app.globalData.userType,
+      // userId: app.globalData.userId
+    })
+    
     if (options.id) {
       col.doc(options.id).get().then(res => {
         this.setData({

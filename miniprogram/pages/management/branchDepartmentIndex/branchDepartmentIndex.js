@@ -1,4 +1,5 @@
 const db = wx.cloud.database()
+const _ = db.command
 const col = db.collection('colPartyMemberSystemManagement')
 
 Page({
@@ -10,7 +11,7 @@ Page({
     managementList: null
   },
 
-  onLoad: function (options) {
+  onLoad: function(options) {
     // console.log(options)
     if (options.type == 'branchDepartment') {
       this.setData({
@@ -28,7 +29,7 @@ Page({
 
   },
 
-  onShow: function () {
+  onShow: function() {
     col.where({
       type: this.data.type
     }).get().then(res => {
@@ -47,13 +48,28 @@ Page({
   },
 
   onSearchBranchDepartment(event) {
-    col.where({
-      type: this.data.type,
-      name: db.RegExp({
-        regexp: event.detail,
-        options: 'i'
-      })
-    }).get().then(res => {
+    col.where(
+      {
+        type: this.data.type,
+        name: db.RegExp({
+          regexp: event.detail,
+          options: 'i'
+        })
+      }
+      // _.or([{
+      //   type: this.data.type,
+      //   name: db.RegExp({
+      //     regexp: event.detail,
+      //     options: 'i'
+      //   })
+      // }, {
+      //     type: this.data.type,
+      //     academyId: db.RegExp({
+      //       regexp: "988c1b1b5ccfa35a0cd8b2f2426d9197",
+      //       options: 'i'
+      //     })
+      // }])
+    ).get().then(res => {
       this.setData({
         managementList: res.data
       })
@@ -69,7 +85,7 @@ Page({
 
   onClickAdd(event) {
     wx.navigateTo({
-      url: '../branchDepartmentManagement/branchDepartmentManagement?type='+this.data.type,
+      url: '../branchDepartmentManagement/branchDepartmentManagement?type=' + this.data.type,
     })
   },
 

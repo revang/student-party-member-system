@@ -24,8 +24,10 @@
   </van-cell-group>
 </vblock>
 
-<div class="btnContainer1" wx:if="{{operateState}}">
-  <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickSubmit">提交</van-button>
+<div wx:if="userType!='学生'">
+  <div class="btnContainer1" wx:if="{{operateState}}">
+    <van-button class="btnStyle1" type="primary" size="large" bindtap="onClickSubmit">提交</van-button>
+  </div>
 </div>
 
 <van-popup show="{{ reviewStateShow }}" position="bottom" custom-class="bottom">

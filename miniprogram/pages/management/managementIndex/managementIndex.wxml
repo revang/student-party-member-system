@@ -1,8 +1,10 @@
 <vblock title="系统管理">
-  <van-cell-group>
-    <van-cell title="学院" value="管理" is-link url="../academyIndex/academyIndex" />
-    <van-cell title="支部" value="管理" is-link url="../branchDepartmentIndex/branchDepartmentIndex?type=branchDepartment" />
-    <van-cell title="班级" value="管理" is-link url="../branchDepartmentIndex/branchDepartmentIndex?type=class" />
-    <van-cell title="用户" value="管理" is-link url="../userIndex/userIndex" />
-  </van-cell-group>
+  <div wx:if="{{userType=='系统管理员'}}">
+    <van-cell-group>
+      <van-cell title="学院" value="管理" is-link url="../academyIndex/academyIndex" />
+      <van-cell title="支部" value="管理" is-link url="../branchDepartmentIndex/branchDepartmentIndex?type=branchDepartment" />
+      <van-cell title="班级" value="管理" is-link url="../branchDepartmentIndex/branchDepartmentIndex?type=class" />
+      <van-cell title="用户" value="管理" is-link url="../userIndex/userIndex" />
+    </van-cell-group>
+  </div>
 </vblock>

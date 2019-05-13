@@ -1,0 +1,49 @@
+/* 容器全屏、flex布局（纵向排列）、容器内的项目都居中显示、容器内子元素均匀排列（每个元素周围分配相同的空间）、容器内间隙（上下200rpx、左右0rpx） 、使用border-box盒子模型*/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+/* 设置button元素宽度、设置button元素字体大小 */
+
+button {
+  width: 200rpx;
+  font-size: 36rpx;
+}
+
+/*设置text元素字体大小 */
+
+text {
+  font-size: 28rpx;
+}
+
+/* flex布局（纵向排列）、居中显示 */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+  margin-bottom: 200rpx;
+}
+
+/* 设置头像宽和高、设置头像外边框、设置头像为圆形显示 */
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx 20rpx 10rpx 20rpx;
+  border-radius: 50%;
+}
+
+/* 设置用户名称字体颜色 */
+
+.userinfo-nickname {
+  color: #aaa;
+}

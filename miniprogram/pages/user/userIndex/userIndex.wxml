@@ -1,0 +1,29 @@
+<view class="toparea">
+  <view class="left">
+  </view>
+  <view class="center">
+    <image src="{{avatarUrl}}" />
+    <text>{{nickname}}</text>
+    <text>{{partyMemberType==null?userType:partyMemberType}}</text>
+  </view>
+  <view class="right">
+  </view>
+</view>
+
+<vblock title="基础信息">
+  <van-cell-group>
+    <van-cell title="姓名" value="{{nickname}}" />
+    <van-cell title="账号" value="{{username}}" />
+  </van-cell-group>
+</vblock>
+
+<vblock title="入党信息">
+  <van-cell-group>
+    <van-cell title="身份" value="{{partyMemberType}}" />
+    <van-cell title="联系人" value="{{contartPersonName}}" />
+    <van-cell title="学院" value="{{academyName}}" />
+    <van-cell title="支部" value="{{branchDepartmentName}}" />
+    <van-cell title="班级" value="{{className}}" />
+
+  </van-cell-group>
+</vblock>

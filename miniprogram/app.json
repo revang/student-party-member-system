@@ -1,9 +1,7 @@
 {
   "pages": [
-    "pages/material/materialIndex/materialIndex",
-    "pages/material/materialUpload/materialUpload",
-    "pages/material/materialList/materialList",
-    "pages/material/materialReview/materialReview",
+    "pages/login/authorize/authorize",
+    "pages/login/login/login",
     "pages/management/managementIndex/managementIndex",
     "pages/management/academyIndex/academyIndex",
     "pages/management/academyManagement/academyManagement",
@@ -15,6 +13,14 @@
     "pages/analysis/userTypeAnalysis/userTypeAnalysis",
     "pages/analysis/studentPartyMemberTypeAnalysis/studentPartyMemberTypeAnalysis",
     "pages/analysis/branchDepartmentTypeAnalysis/branchDepartmentTypeAnalysis",
+    "pages/user/userIndex/userIndex",
+    "pages/material/materialIndex/materialIndex",
+    "pages/material/materialUpload/materialUpload",
+    "pages/material/materialList/materialList",
+    "pages/material/materialReview/materialReview",
+    "pages/video/videoIndex/videoIndex",
+    "pages/video/videoUpload/videoUpload",
+    "pages/video/videoPlay/videoPlay",
     "pages/test/test"
   ],
   "window": {
@@ -24,44 +30,44 @@
     "navigationBarTitleText": "学生党员培养管理",
     "navigationBarTextStyle": "black"
   },
-    "tabBar": {
-      "color": "#757982",
-      "selectedColor": "#138cff",
-      "borderStyle": "white",
-      "backgroundColor": "#fff",
-      "list": [
-        {
-          "pagePath": "pages/test/test",
-          "text": "视频",
-          "iconPath": "images/tabbar/plan.png",
-          "selectedIconPath": "images/tabbar/plan-on.png"
-        },
-        {
-          "pagePath": "pages/material/materialIndex/materialIndex",
-          "text": "材料",
-          "iconPath": "images/tabbar/bill.png",
-          "selectedIconPath": "images/tabbar/bill-on.png"
-        },
-        {
-          "pagePath": "pages/management/managementIndex/managementIndex",
-          "text": "管理",
-          "iconPath": "images/tabbar/index.png",
-          "selectedIconPath": "images/tabbar/index-on.png"
-        },
-        {
-          "pagePath": "pages/analysis/analysisIndex/analysisIndex",
-          "text": "统计",
-          "iconPath": "images/tabbar/ranking.png",
-          "selectedIconPath": "images/tabbar/ranking-on.png"
-        },
-        {
-          "pagePath": "pages/test/test",
-          "text": "我的",
-          "iconPath": "images/tabbar/me.png",
-          "selectedIconPath": "images/tabbar/me-on.png"
-        }
-      ]
-    },
+  "tabBar": {
+    "color": "#757982",
+    "selectedColor": "#138cff",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/video/videoIndex/videoIndex",
+        "text": "视频",
+        "iconPath": "images/tabbar/plan.png",
+        "selectedIconPath": "images/tabbar/plan-on.png"
+      },
+      {
+        "pagePath": "pages/material/materialIndex/materialIndex",
+        "text": "材料",
+        "iconPath": "images/tabbar/bill.png",
+        "selectedIconPath": "images/tabbar/bill-on.png"
+      },
+      {
+        "pagePath": "pages/management/managementIndex/managementIndex",
+        "text": "管理",
+        "iconPath": "images/tabbar/index.png",
+        "selectedIconPath": "images/tabbar/index-on.png"
+      },
+      {
+        "pagePath": "pages/analysis/analysisIndex/analysisIndex",
+        "text": "统计",
+        "iconPath": "images/tabbar/ranking.png",
+        "selectedIconPath": "images/tabbar/ranking-on.png"
+      },
+      {
+        "pagePath": "pages/user/userIndex/userIndex",
+        "text": "我的",
+        "iconPath": "images/tabbar/me.png",
+        "selectedIconPath": "images/tabbar/me-on.png"
+      }
+    ]
+  },
   "usingComponents": {
     "vblock": "components/vblock/index",
     "van-action-sheet": "utils/vant-weapp/action-sheet/index",

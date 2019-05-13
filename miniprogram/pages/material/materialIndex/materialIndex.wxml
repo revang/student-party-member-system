@@ -1,9 +1,14 @@
 <vblock title="入党材料">
   <van-cell-group>
-    <van-cell title="提交文档" value="查看" is-link url="../materialUpload/materialUpload?type=document" />
-    <van-cell title="审核文档" value="查看" is-link url="../materialList/materialList?type=document" />
-    <van-cell title="提交志愿活动" value="查看" is-link url="../materialUpload/materialUpload?type=activity" />
-    <van-cell title="审核志愿活动" value="查看" is-link url="../materialList/materialList?type=activity" />
+    <div wx:if="{{userType=='学生'}}">
+      <van-cell title="提交文档" value="查看" is-link url="../materialUpload/materialUpload?type=document" />
+      <van-cell title="查看文档" value="查看" is-link url="../materialList/materialList?type=document" />
+    </div>
+    <div wx:else>
+      <van-cell title="审核文档" value="查看" is-link url="../materialList/materialList?type=document" />
+    </div>
+    <!-- <van-cell title="提交志愿活动" value="查看" is-link url="../materialUpload/materialUpload?type=activity" />
+    <van-cell title="审核志愿活动" value="查看" is-link url="../materialList/materialList?type=activity" /> -->
     <!-- <van-cell title="学生政治面貌统计" value="查看" is-link url="../studentPartyMemberTypeAnalysis/studentPartyMemberTypeAnalysis" />
     <van-cell title="支部统计" value="查看" is-link url="../branchDepartmentTypeAnalysis/branchDepartmentTypeAnalysis" /> -->
   </van-cell-group>

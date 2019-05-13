@@ -1,5 +1,5 @@
 <van-cell-group wx:for="{{userTypeList}}" wx:key="title">
-  <van-cell title="{{item.name}}" value="{{item.value}}" />
+  <van-cell title="{{item.name}}" value="{{item.value}}" is-link url="../../management/userIndex/userIndex?partyMemberType={{item.name}}" />
 </van-cell-group>
 
 <view class="container">

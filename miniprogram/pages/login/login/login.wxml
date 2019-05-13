@@ -1,0 +1,21 @@
+<vblock title="账户">
+  <van-cell-group>
+    <van-field value="{{username}}" label="账号" placeholder="请填写账号" bind:change="inputUsername" />
+    <block wx:if="{{isNext}}">
+      <van-field value="{{password}}" label="密码" type="password" placeholder="请填写密码" bind:change="inputPassword" />
+    </block>
+  </van-cell-group>
+</vblock>
+
+<block wx:if="{{userId!=null}}">
+  <van-cell-group title="权限">
+    <van-cell title="权限" value="{{userType}}" />
+  </van-cell-group>
+</block>
+
+<div class="btnContainer1 ">
+  <div class="btn-div1">
+    <van-button class="btnStyle1" type="primary" bindtap="buttonClick">{{buttonTitle}}</van-button>
+    <van-button class="btnStyle1" type="primary" bindtap="buttonClear">重置</van-button>
+  </div>
+</div>

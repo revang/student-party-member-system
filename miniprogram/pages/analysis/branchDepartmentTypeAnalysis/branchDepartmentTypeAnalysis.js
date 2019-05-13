@@ -28,11 +28,12 @@ Page({
   },
 
   getData: function() {
-    if (!Chart) {
-      this.init_echarts();
-    } else {
-      this.setOption(Chart);
-    }
+    this.init_echarts();
+    // if (!Chart) {
+    //   this.init_echarts();
+    // } else {
+    //   this.setOption(Chart);
+    // }
   },
 
   init_echarts: function() {

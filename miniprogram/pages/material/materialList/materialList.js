@@ -25,7 +25,9 @@ Page({
         })
       }
     }
+  },
 
+  onShow(){
     col.where({
       type: 'document'
     }).get().then(res => {

@@ -1,0 +1,18 @@
+<vblock title="标题">
+  <van-cell-group>
+    <van-field label="标题" value="{{title}}" placeholder="请输入标题" bind:change="inputTitle" />
+  </van-cell-group>
+</vblock>
+
+<vblock title="上传资料">
+  <van-cell-group>
+    <van-cell title="视频" value="{{videoTempPath?'已选择':'请选择视频'}}" bindtap="chooseVideoRes" />
+    <van-cell title="封面" value="{{imageTempPath?'已选择':'请选择封面'}}" bindtap="chooseImageRes" />
+  </van-cell-group>
+</vblock>
+
+<div class="btnContainer1">
+  <van-button class="btnStyle1" type="primary" size="large" bindtap="buttonAdd">添加</van-button>
+</div>
+
+<van-toast id="van-toast" />

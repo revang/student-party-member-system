@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <van-button type="primary" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="user-motto">授权登录</van-button>
+  </view>
+</view>

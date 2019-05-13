@@ -12,6 +12,8 @@ App({
 
     this.globalData = {
       // development
+      avatarUrl:null,
+      userType:"学生",
       userId: "96c1cbbe5cd027fb0d24d4a2261656c2"
     }
   }

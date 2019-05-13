@@ -1,0 +1,32 @@
+<!-- <vblock title="视频"> -->
+<!-- <div wx:if="{{userType=='学生'}}">
+  <div wx:for="{{videoList}}" wx:key="_id">
+    <van-panel title="{{item.title}}" desc="更新时间: {{item.updateDate}}; 时长: {{item.duration}} 秒" status="{{item.state?'已学习':'未学习'}}" bindtap="gototVideoPlay" data-id="{{item._id}}" />
+  </div>
+</div> -->
+
+<!-- <div wx:else> -->
+<van-search placeholder="查询视频（视频名称）" bind:search="onSearchVideo" />
+<van-cell-group wx:for="{{videoList}}" wx:key="_id">
+  <van-cell title="{{item.title}}" label="时长: {{item.duration}} 秒" value="更多信息" bindtap="onClickNavigateToPlay" data-id="{{item._id}}" data-title="{{item.title}}" />
+</van-cell-group>
+
+<!-- <van-action-sheet show="{{ show }}" title="{{chooseItemTitle}}" actions="{{ actions }}" cancel-text="取消" bind:select="onSelect" bind:close="onClose" bind:cancel="onCancel" /> -->
+
+
+<div class="btnContainer2" wx:if="{{userType=='系统管理员'}}">
+  <van-button round type="primary" bind:click="buttonAdd">添加</van-button>
+</div>
+<!-- </div> -->
+<!-- </vblock> -->
+
+
+<!-- <van-search placeholder="查询学院（学院名称）" bind:search="onSearchAcademy" />
+
+<van-cell-group wx:for="{{managementList}}" wx:key="_id">
+  <van-cell title="{{item.name}}" value="修改 / 删除" label="浙江树人大学{{item.name}}" bindtap="onClickItem" data-id="{{item._id}}" />
+</van-cell-group>
+
+<div class="btnContainer2">
+  <van-button round type="primary" bind:click="onClickAdd">添加</van-button>
+</div> -->

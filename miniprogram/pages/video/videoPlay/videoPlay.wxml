@@ -1,0 +1,20 @@
+<video src="{{videoUrl}}" poster="{{imageUrl}}" controls bindplay="start" bindpause="pause" bindended="stop">
+</video>
+
+<vblock title="视频信息">
+  <van-cell-group>
+    <van-cell title="标题" value="{{title}}" />
+    <van-cell title="时长" value="{{duration}} 秒" />
+    <van-cell title="更新时间" value="{{updateDate}}" />
+  </van-cell-group>
+</vblock>
+
+<view wx:if="{{userType=='学生'}}">
+  <vblock title="播放信息">
+    <van-cell-group>
+      <van-cell title="观看状态" value="{{isPlayed?'已完成':'未完成'}}" />
+    </van-cell-group>
+  </vblock>
+</view>
+
+<van-toast id="van-toast" />

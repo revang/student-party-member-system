@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -40,28 +40,24 @@
 				},
 				{
 					"id": 1,
-					"name": "材料",
-					"pathName": "pages/material/materialIndex/materialIndex",
+					"name": "登录",
+					"pathName": "pages/login/authorize/authorize",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "testdocUp",
-					"pathName": "pages/material/materialUpload/materialUpload",
-					"query": ""
+					"id": 2,
+					"name": "视频Play",
+					"pathName": "pages/video/videoPlay/videoPlay",
+					"query": "id=988c1b1b5cd619a80faca66532c9e9c1",
+					"scene": null
 				},
 				{
 					"id": 3,
 					"name": "test",
-					"pathName": "pages/material/materialList/materialList",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "文档审核",
-					"pathName": "pages/material/materialReview/materialReview",
-					"query": "id=ee3099285cd191f40dcdefdf2dded3b3"
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

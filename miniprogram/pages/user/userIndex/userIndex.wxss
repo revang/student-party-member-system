@@ -1,0 +1,88 @@
+.menuitem button {
+  border: none;
+  background: none;
+  border-radius: 0;
+  color: #666;
+  font-size: 26rpx;
+  text-align: left;
+  line-height: 2.05;
+  padding-left: 0;
+  margin-left: 0;
+}
+.menuitem button:after {
+  border: none;
+}
+.toparea {
+  display: flex;
+  align-items: baseline;
+  text-align: center;
+  padding: 50rpx 0;
+  margin-bottom: 20rpx;
+  background-color: #138cff;
+}
+.toparea text {
+  display: block;
+  font-size: 26rpx;
+  color: #fff;
+}
+.left,
+.right {
+  width: 25%;
+}
+.left text:last-child,
+.right text:last-child {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.center {
+  flex: 1;
+}
+.center image {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto 30rpx auto;
+  border-radius: 100%;
+  border: 1rpx solid #f8f8f8;
+}
+.center text:last-child {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.menulist {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.menulist .menuitem {
+  display: flex;
+  padding: 30rpx;
+  transition: background-color 0.3s;
+}
+.menulist .menuitem .icon {
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #138cff;
+}
+.menulist .menuitem text {
+  flex: 1;
+  display: block;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.menulist .menuitem:active {
+  background-color: #f8f8f8;
+}
+
+.css1{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

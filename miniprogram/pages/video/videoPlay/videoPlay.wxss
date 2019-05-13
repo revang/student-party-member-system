@@ -1,0 +1,4 @@
+/* miniprogram/pages/video/videoPlay/videoPlay.wxss */
+video{
+  width: 100%;
+}
